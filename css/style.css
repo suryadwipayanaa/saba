@@ -1,0 +1,631 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+.atas{
+background-image: url(../gambar/background.jpg);
+background-repeat: no-repeat;
+background-position: center;
+background-attachment: fixed;
+background-size: cover;
+width: 100%;
+height: 100vh;
+position: relative;
+background-position-y: -60px;
+z-index: 9;
+}
+
+.logo img{
+    padding: -30px 10px 0px 0;
+}
+
+.atas::after{
+    display: block;
+    content: '';
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(1, 48, 13,.6);
+    position: absolute;
+    }
+    
+
+.atas .text{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    position: fixed;
+}
+
+.nav{
+    width: 100%;
+    background-color: #046e20;
+    position: relative;
+    z-index: 999;
+    height: 50px;
+}
+
+.nav .container{
+    width: 80%;
+    margin: 0 auto;
+    line-height: 65px;
+    text-align: center;
+}
+
+
+.nav .container ul li{
+    display: inline;
+    margin-right: 20px;
+    list-style: none;
+    opacity: 0;
+    transform: translate(0,-100px);
+    transition: 1s;
+}
+
+.nav .container ul li.nmuncul{
+    opacity: 1;
+    transform: translate(0,0);
+}
+
+.subnav{
+    background-color: #fff;
+    position: fixed;
+    width: 100%;
+    height: 50px;
+    padding: 5px;
+    transition: 0.1s ease all ;
+    z-index: 99999;
+}
+
+.subnav .container{
+    width: 80%;
+    margin: 0 auto;
+}
+
+.subnav h1{
+    float: left;
+    color: #046e20;
+    letter-spacing: 2px;
+    font-family: 'Zen Antique', serif;
+}
+
+.subnav ul{
+    float: right;
+    line-height: 50px;
+}
+.subnav .container ul li{
+    display: inline;
+    margin-right: 20px;
+    list-style: none;
+
+}
+.subnav .container ul li a{
+    text-decoration: none;
+    color: #046e20;
+    padding: 18px;
+    font-family: 'Zen Kaku Gothic Antique', sans-serif;
+    font-weight: 700;
+    transition: 0.8s ease all;
+}
+
+.subnav .container ul li a:hover{
+    background-color: #046e20;
+    color: #fff;
+    font-weight: bold;
+}
+
+.text{
+    position: relative;
+    z-index: 9999;
+    padding: 10px;
+    opacity: 0;
+    transition: 0.8s;
+    transform: translate(0,-200px);
+}
+
+.text.kiri{
+    opacity: 1;
+    transform: translate(0,0);
+}
+
+
+.text strong{
+    font-size:2.3em;
+    letter-spacing: 2px;
+    font-family: 'Zen Antique', serif;
+    text-align: center;
+    color: #fff;
+}
+
+.text p {
+    font-size: 1.2em;
+    font-family: 'Zen Kaku Gothic Antique', sans-serif;
+    font-weight: 500;
+    color: #fff;
+}
+
+.text a{
+    display: inline-block;
+    background-color: blue;
+    padding: 3px 30px;
+    text-decoration: none;
+    color: #fff;
+    margin: 10px 20px;
+    border-radius: 20px;
+    transition: 0.6s ease all;
+    text-transform: uppercase;
+    font-family: 'Zen Antique', serif;
+}
+.text a:hover{
+    background-color:#046e20 ;
+    color: #fff;
+}
+
+.load{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #eee;
+    z-index: 99999999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.load .loader{
+    height: 100px;
+    width: 100px;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    border-top-color: #046e20;
+    border-right-color: #046e20 ;
+    border-bottom-color: #046e20 ;
+    animation: muter 0.5s linear infinite;
+}
+
+.about{
+    padding: 70px 0 130px 0;
+}
+
+.judula {
+    
+    color: #046e20;
+    font-family: 'Zen Antique', serif;
+    font-size: 2em;
+    padding: 30px 0 0px 0;
+    opacity: 0;
+    transform: translate(0,-100px);
+    transition: 0.5s;
+}
+
+.judula.amuncul{
+    opacity: 1;
+    transform: translate(0,0);
+}
+
+.about .container{
+    width: 80%;
+    margin: 0 auto;
+    height: auto;
+  
+}
+
+.box-2{
+    width: 100%;
+    display: flex;
+    height: 30vh;
+}
+
+
+.gambar{
+    width: 150px;
+    height: 150px;
+    margin-left: 20px;
+    z-index: 2;
+    opacity: 0;
+    transition: 0.4s;
+    transform: translate(0, -70px);
+}
+
+.gambar.muncul{
+    opacity: 1;
+    transform: translate(0,0);
+}
+
+.gambar img{
+    width: 150px;
+   height: 150px;
+   border-radius: 50%;
+    box-shadow: -2px -4px 7px rgba(0,0,0,0.4);
+}
+
+.tulisan{
+width: 50%;
+padding: 10px;
+overflow: hidden;
+text-align: justify;
+font-size: 0.9em;
+font-family: 'Zen Antique', serif;
+z-index: 3;
+opacity: 0;
+transition: 0.4s;
+transform: translate(0,-70px);
+}
+
+.tulisan.ada{
+    opacity: 1;
+    transform: translate(0,0);
+}
+
+.box-2 .tulisan .cesss{
+    margin: 15px 0;
+}
+
+.box-2 .tulisan .cesss a{
+    text-decoration: none;
+    background-color:#0800fc;
+    padding: 5px 25px;
+    border-radius: 20px;
+    color: #fff;
+    transition: 0.5s ease all;
+}
+
+.box-2 .tulisan .cesss a:hover{
+    background-color: red;
+}
+
+
+.java{
+    background-color: #e3dada;
+    transition: 0.5s ease all;
+    box-shadow: 2px 4px 5px rgba(0,0,0,0.4);
+}
+
+
+
+/* galery */
+
+.galeri{
+    background-image: url(../gambar/gal.jpg);
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 60px 0 80px 0;
+    height: 80vh;
+    background-image: cover;
+    background-attachment: fixed;
+    position: relative;
+    background-position-y: -50px;
+
+}
+
+.galeri::after{
+    display: block;
+    content: '';
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(1, 48, 13,.5);
+    position: absolute;
+    }
+
+ input[type="radio"]{
+     z-index: 3;
+     position: relative;
+     cursor: pointer;
+ }
+
+.judul h3{
+    color: #046e20;
+    font-family: 'Zen Antique', serif;
+    font-size: 2em;
+    padding: 10px;
+}
+
+.galeri .judul{
+    opacity: 0;
+    transform: translate(0,-70px);
+    transition: 0.5s;
+}
+
+.galeri .judul.jmuncul{
+    opacity: 1;
+    transform: translate(0,0);
+}
+
+.galeri input{
+    opacity: 0;
+    transform: translate(0,-70px);
+    transition: 0.5s;
+}
+
+.galeri input.imuncul{
+    opacity: 1;
+    transform: translate(0,0);
+}
+    
+.galeri .image{
+    width: 25rem;
+    height: 70vh;
+    display: flex;
+    overflow: hidden;
+    opacity: 0;
+    transform: translate(0,-70px);
+    transition: 0.5s;
+
+}
+
+.galeri .image.gmuncul{
+opacity: 10;
+transform: translate(0,0);
+}
+
+.galeri .image img{
+    width: 25rem;
+    height: 70vh;
+    transition: 0.5s ease all;
+    z-index: 3;
+    position: relative;
+}
+
+.cs1:checked ~ .image > .gmbr1{
+    margin-left: -0rem;
+}
+
+.cs2:checked ~ .image > .gmbr1{
+    margin-left: -25rem;
+}
+.cs3:checked ~ .image > .gmbr1{
+    margin-left: -50rem;
+}
+
+.cs4:checked ~ .image > .gmbr1{
+    margin-left: -75rem;
+}
+.cs5:checked ~ .image > .gmbr1{
+    margin-left: -100rem;
+}
+.cs6:checked ~ .image > .gmbr1{
+    margin-left: -125rem;
+}
+.cs7:checked:checked ~ .image > .gmbr1{
+    margin-left: -150rem;
+}
+
+.cs8:checked ~ .image > .gmbr1{
+    margin-left: -175rem;
+}
+.cs9:checked ~ .image > .gmbr1{
+    margin-left: -200rem;
+}
+.cs10:checked ~ .image > .gmbr1{
+    margin-left: -225rem;
+}
+
+
+
+html{
+    scroll-behavior: smooth;
+}
+
+.service{
+    padding: 20px;
+    height: 100vh;
+    background-color: #d3dbd5;
+}
+
+
+.service .container{
+    width: 80%;
+    margin: 0 auto;
+    margin: 50px;
+}
+
+.jdl{
+    color: #046e20;
+    font-family: 'Zen Antique', serif;
+    font-size: 2em;
+    padding: 20px;
+    opacity: 0;
+    transform: translate(0,-70px);
+    transition: 0.5s;
+}
+
+.jdl.jmuncul{
+    opacity: 1;
+    transform: translate(0,0);
+}
+
+.box-4{
+    width: 30%;
+    display: inline-block;
+    margin:40px 0; 
+    opacity: 0;
+    transform: translate(0,-70px);
+    transition: 0.5s;
+}
+
+
+.box-4.smuncul{
+    opacity: 1;
+    transform: translate(0,0);
+}
+
+
+.box-4 p {
+    font-family: 'Zen Antique', serif;
+    letter-spacing: 2px;
+    margin-top: 15px;
+
+}
+.img{
+    width: 50%;
+}
+
+.fa-parking,
+.fa-utensils,
+.fa-toilet,
+.fa-bed,
+.fa-hotel,
+.fa-horse
+{
+    font-size: 3em;
+    border: 1px solid black;
+    padding: 20px;
+    border-radius: 50%;
+}
+
+.komentar{
+    padding: 70px 0 70px 0;
+}
+
+.komentar h3{
+    padding: 10px 0 20px 0;
+}
+.komentar h3{
+    color: #046e20;
+    font-family: 'Zen Antique', serif;
+    font-size: 2em;
+}
+
+label{
+    display: block;
+    margin: 10px;
+    font-family: 'Zen Antique', serif;
+}
+input[type="email"],
+input[type="username"]{
+    width: 40%;
+    padding: 10px;
+    border-radius: 20px;
+    outline: none;
+    border: none;
+    border: 1px solid rgba(27, 54, 52,.30);
+    transition: 0.5s ease all;
+}
+
+input[type="email"]:hover{
+    box-shadow: 2px 4px 5px rgba(0,0,0,0.4);
+}
+input[type="username"]:hover{
+    box-shadow: 2px 4px 5px rgba(0,0,0,0.4);  
+}
+textarea[name="textarea"]:hover{
+    box-shadow: 2px 4px 5px rgba(0,0,0,0.4);
+}
+
+
+textarea[name="textarea"]{
+    width: 40%;
+    padding: 10px;
+    height: 140px;
+    outline: none;
+    border: none;
+    border: 1px solid rgba(27, 54, 52,.30);
+    transition: 0.5s ease all;
+}
+
+
+.submit{
+    margin-top: 20px;
+}
+.submit a{
+background-color: #01662e;
+border-radius: 20px;
+color: #fff;
+font-family: 'Zen Antique', serif;
+text-decoration: none;
+padding: 5px 30px;
+font-weight: 400;
+transition: 0.5s ease all;
+text-transform: uppercase;
+letter-spacing: 1px;
+}
+
+.submit a:hover{
+    background-color: #ad2705;
+}
+
+.footer{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.foot p{
+color: #5c403e;
+font-family: 'Zen Antique', serif;
+}
+
+.foot {
+  position: absolute;
+   bottom: 0;
+   padding: 30px;
+   
+}
+
+
+.scrol{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    margin: 0 50px 30px 0;
+    justify-content: center;
+    align-items: flex-end;
+}
+.sub{
+    position: relative;
+    position: fixed;
+    z-index: 99999;
+}
+
+.fa-arrow-up{
+    font-size: 1.5em;
+    color: #fff;
+    background-color: #435448;
+    border-radius: 50%;
+    padding: 10px;
+}
+
+
+
+
+.fa-facebook,
+.fa-whatsapp,
+.fa-instagram{
+    font-size: 1em;
+    background-color: #fff;
+    padding: 5px;
+    border-radius: 50%;
+}
+
+.fa-whatsapp{
+color: #03591a;
+}
+
+.fa-instagram{
+color: #e33e19;
+}
+
+
+@keyframes muter{
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+
+
+
+
+
+
